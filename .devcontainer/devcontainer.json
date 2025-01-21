@@ -1,0 +1,18 @@
+{
+    "name": "AI-Assisted Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // Base image
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {},  // Common utilities
+        "ghcr.io/devcontainers/features/git:1": {}           // Git
+    },
+    "forwardPorts": [3000],  // Example port forwarding
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y curl",  // Example setup command
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",  // Example extension
+                "ms-vscode.cpptools" // Example extension
+            ]
+        }
+    }
+}
