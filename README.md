@@ -1,7 +1,7 @@
 # Using Devcontainers for AI-assisted agile development
 
 This repo exists to demonstrate how to use devcontainers
-to isolated AI written code from your workstation.
+to isolate AI written code from your workstation.
 
 It is based on the [playbook here](https://github.com/mikegehard/ai-assisted-agile-development/blob/main/playbooks/ai-generated-code-execution.md).
 
@@ -22,3 +22,21 @@ To easy onboarding for new developers of our project.
 To allow AI assistants to autonomously iterate on code via command line
 tools like running tests, linting, etc that provide context/feedback
 to the LLM.
+
+## Tool Installation Approaches
+
+### Dev Containers Features
+- **Modular** - Install tools through reusable components from the Dev Container ecosystem
+- **Curated** - Community-maintained installers with best practices
+- **Portable** - Consistent across different environments (local/CI/cloud)
+- **Secure** - Verified installation methods reduce risk of misconfiguration
+- **VS Code Integrated** - Automatic configuration with editor extensions
+
+### Raw Dockerfiles
+- **Full Control** - Exact control over layer construction and image optimization
+- **Minimal Images** - Exclude Dev Container-specific tooling when not needed
+- **Build Performance** - Fine-grained cache control for faster builds
+- **Production Parity** - Closer match to deployment environments
+- **Complex Workflows** - Better support for multi-stage builds and custom networks
+
+**Recommendation**: Use Dev Container features for development environments and Dockerfiles for production images - they can co-exist in the same project!
