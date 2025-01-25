@@ -42,7 +42,8 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: .devcontainer
+        file: .devcontainer/Dockerfile
         push: ${{ github.event_name != 'pull_request' }}
         tags: |
           ghcr.io/${{ github.repository }}:${{ env.AIDER_VERSION }}
