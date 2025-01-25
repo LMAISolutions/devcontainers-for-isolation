@@ -5,6 +5,9 @@ to isolate AI written code from your workstation.
 
 It is based on the [playbook here](https://github.com/mikegehard/ai-assisted-agile-development/blob/main/playbooks/ai-generated-code-execution.md).
 
+This is the starting point for all of my development environments for
+AI-assisted agile development.
+
 ## What are devcontainers?
 See the [devconatiners website](https://containers.dev/).
 
@@ -44,6 +47,7 @@ to the LLM.
 ## Running
 
 ```bash
+devcontainer build --workspace-folder .
 devcontainer up --workspace-folder .
 devcontainer exec --workspace-folder . /bin/bash # to run console in the container
 devcontainer exec --workspace-folder . git --version # run command in the container

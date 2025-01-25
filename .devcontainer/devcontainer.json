@@ -1,6 +1,8 @@
 {
     "name": "AI-Assisted Development Environment",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu", // Base image
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "features": { // Used to install dev tools, see https://containers.dev/features
         "ghcr.io/devcontainers/features/common-utils:1": {},
         "ghcr.io/devcontainers/features/git:1": {}
