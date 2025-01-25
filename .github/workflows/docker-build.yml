@@ -50,8 +50,6 @@ jobs:
         tags: |
           ghcr.io/${{ github.repository }}:${{ env.AIDER_VERSION }}
           ghcr.io/${{ github.repository }}:latest
-        build-args: |
-          AIDER_VERSION=${{ env.AIDER_VERSION }}
         labels: |
           version=${{ env.AIDER_VERSION }}
         cache-from: type=gha
