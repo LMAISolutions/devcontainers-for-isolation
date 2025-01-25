@@ -40,3 +40,11 @@ to the LLM.
 - **Complex Workflows** - Better support for multi-stage builds and custom networks
 
 **Recommendation**: Use Dev Container features for development environments and Dockerfiles for production images - they can co-exist in the same project!
+
+## Running
+
+```bash
+devcontainer up --workspace-folder .
+devcontainer exec --workspace-folder . /bin/bash # to run console in the container
+devcontainer exec --workspace-folder . git --version # run command in the container
+```
