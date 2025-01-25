@@ -1,0 +1,55 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.devcontainer/Dockerfile'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '.devcontainer/Dockerfile'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Extract versions from Dockerfile
+      id: extract-versions
+      run: |
+        AIDER_VERSION=$(grep -oP 'ARG AIDER_VERSION=\K[0-9]+\.[0-9]+\.[0-9]+' .devcontainer/Dockerfile)
+        echo "AIDER_VERSION=${AIDER_VERSION}" >> $GITHUB_ENV
+        echo "Extracted versions:"
+        echo "Aider: ${AIDER_VERSION}"
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: ${{ github.event_name != 'pull_request' }}
+        tags: |
+          ghcr.io/${{ github.repository }}:${{ env.AIDER_VERSION }}
+          ghcr.io/${{ github.repository }}:latest
+        build-args: |
+          AIDER_VERSION=${{ env.AIDER_VERSION }}
+        labels: |
+          version=${{ env.AIDER_VERSION }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
