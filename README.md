@@ -67,4 +67,3 @@ devcontainer exec --workspace-folder . /bin/bash
 ```bash
 devcontainer exec --workspace-folder . aider
 ```
-```
