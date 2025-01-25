@@ -46,6 +46,9 @@ to the LLM.
 
 ## Running
 
+Pre-built containers are available at [GitHub Container Registry](https://github.com/mikegehard/devcontainers-for-isolation/pkgs/container/devcontainers-for-isolation). 
+The container version matches the version of aider installed in the container.
+
 1. First, copy example.env to .env and fill in your API keys:
 ```bash
 cp example.env .env
