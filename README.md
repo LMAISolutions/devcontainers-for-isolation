@@ -61,7 +61,9 @@ devcontainer build --workspace-folder .
 devcontainer up --workspace-folder .
 ```
 
-3. You can then either:
+3. Note that the container runs as the `vscode` user by default, as defined in the Dockerfile.
+
+4. You can then either:
 - Open a shell in the container:
 ```bash
 devcontainer exec --workspace-folder . /bin/bash

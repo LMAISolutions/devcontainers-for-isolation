@@ -1,6 +1,6 @@
 {
     "name": "AI-Assisted Development Environment",
-    "image": "ghcr.io/mikegehard/devcontainers-for-isolation:0.72.0", // Base image
+    "image": "ghcr.io/mikegehard/devcontainers-for-isolation:0.72.2", // Base image
     "features": { // Used to install dev tools, see https://containers.dev/features
         "ghcr.io/devcontainers/features/common-utils:1": {},
         "ghcr.io/devcontainers/features/git:1": {}
@@ -8,7 +8,7 @@
     "forwardPorts": [
         3000
     ], // Use to open up ports on the host machine
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y curl", // use to install dependencies?
+    "postCreateCommand": "echo 'Running postCreateCommand!'", // use to install dependencies?
     "customizations": {
         "vscode": {
             "extensions": [
