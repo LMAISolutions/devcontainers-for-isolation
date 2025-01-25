@@ -27,9 +27,12 @@ jobs:
       id: extract-versions
       run: |
         AIDER_VERSION=$(grep -oP 'ARG AIDER_VERSION=\K[0-9]+\.[0-9]+\.[0-9]+' .devcontainer/Dockerfile)
+        UV_VERSION=$(grep -oP 'ARG UV_VERSION=\K[0-9]+\.[0-9]+\.[0-9]+' .devcontainer/Dockerfile)
         echo "AIDER_VERSION=${AIDER_VERSION}" >> $GITHUB_ENV
+        echo "UV_VERSION=${UV_VERSION}" >> $GITHUB_ENV
         echo "Extracted versions:"
         echo "Aider: ${AIDER_VERSION}"
+        echo "UV: ${UV_VERSION}"
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
@@ -52,6 +55,7 @@ jobs:
           ghcr.io/${{ github.repository }}:latest
         build-args: |
           AIDER_VERSION=${{ env.AIDER_VERSION }}
+          UV_VERSION=${{ env.UV_VERSION }}
         labels: |
           version=${{ env.AIDER_VERSION }}
         cache-from: type=gha
