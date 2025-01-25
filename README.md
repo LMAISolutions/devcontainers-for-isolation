@@ -46,9 +46,25 @@ to the LLM.
 
 ## Running
 
+1. First, copy example.env to .env and fill in your API keys:
+```bash
+cp example.env .env
+# Edit .env to add your API keys
+```
+
+2. Then build and run the devcontainer:
 ```bash
 devcontainer build --workspace-folder .
 devcontainer up --workspace-folder .
-devcontainer exec --workspace-folder . /bin/bash # to run console in the container
-devcontainer exec --workspace-folder . git --version # run command in the container
+```
+
+3. You can then either:
+- Open a shell in the container:
+```bash
+devcontainer exec --workspace-folder . /bin/bash
+```
+- Or run aider directly:
+```bash
+devcontainer exec --workspace-folder . aider
+```
 ```
