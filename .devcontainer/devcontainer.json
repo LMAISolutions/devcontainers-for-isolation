@@ -1,20 +1,20 @@
 {
     "name": "AI-Assisted Development Environment",
-    "image": "ghcr.io/mikegehard/devcontainers-for-isolation:0.72.2", // Base image
-    "features": { // Used to install dev tools, see https://containers.dev/features
+    "image": "ghcr.io/mikegehard/devcontainers-for-isolation:0.72.3",
+    "features": {
         "ghcr.io/devcontainers/features/common-utils:1": {},
         "ghcr.io/devcontainers/features/git:1": {}
     },
-    "forwardPorts": [
-        3000
-    ], // Use to open up ports on the host machine
-    "postCreateCommand": "echo 'Running postCreateCommand!'", // use to install dependencies?
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python", // Example extension
-                "ms-vscode.cpptools" // Example extension
-            ] // these will change depending on development environment
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "GitHub.remotehub",
+                "ms-azuretools.vscode-docker",
+                "redhat.vscode-yaml",
+                "streetsidesoftware.code-spell-checker"
+            ]
         }
     }
 }
