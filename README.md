@@ -68,7 +68,12 @@ devcontainer up --workspace-folder .
 ```bash
 devcontainer exec --workspace-folder . /bin/bash
 ```
-- Or run aider directly:
+- Or run [aider](https://aider.chat/) directly:
 ```bash
 devcontainer exec --workspace-folder . aider
+```
+
+- Or run [goose](https://block.github.io/goose/) directly:
+```bash
+devcontainer exec --workspace-folder . goose
 ```

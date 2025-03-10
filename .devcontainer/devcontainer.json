@@ -1,6 +1,7 @@
 {
     "name": "AI-Assisted Development Environment",
-    "image": "ghcr.io/mikegehard/devcontainers-for-isolation:0.75.2",
+    "image": "ghcr.io/mikegehard/devcontainers-for-isolation:latest",
+    "runArgs": ["--env-file",".env"],
     "features": {
         "ghcr.io/devcontainers/features/common-utils:1": {},
         "ghcr.io/devcontainers/features/git:1": {}
