@@ -77,3 +77,5 @@ devcontainer exec --workspace-folder . aider
 ```bash
 devcontainer exec --workspace-folder . goose
 ```
+
+- Claude Code can be included via a [Devcontainer feature](https://github.com/anthropics/devcontainer-features).

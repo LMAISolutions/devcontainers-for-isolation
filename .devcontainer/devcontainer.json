@@ -4,7 +4,8 @@
     "runArgs": ["--env-file",".env"],
     "features": {
         "ghcr.io/devcontainers/features/common-utils:1": {},
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
     },
     "customizations": {
         "vscode": {

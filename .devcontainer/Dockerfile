@@ -16,8 +16,3 @@ USER vscode
 RUN uv tool install --force --python python3.12 aider-chat@${AIDER_VERSION}
 
 RUN cd $HOME && curl -fsSL https://github.com/block/goose/releases/download/stable/download_cli.sh | CONFIGURE=false bash
-
-ENV PATH=$PATH:/home/vscode/.npm-global/bin
-RUN mkdir -p ~/.npm-global && \
-    npm config set prefix ~/.npm-global && \
-    npm install -g @anthropic-ai/claude-code
